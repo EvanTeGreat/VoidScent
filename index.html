@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VoidScent SMP</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="https://your-favicon-url.com/favicon.ico">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #1a1a1a;
+            color: #f0f0f0;
+        }
+
+        header {
+            background-color: #242424;
+            padding: 20px;
+            text-align: center;
+        }
+
+        header img {
+            max-width: 150px;
+            height: auto;
+        }
+
+        header h1 {
+            margin: 10px 0 0;
+            font-size: 2.5rem;
+        }
+
+        nav {
+            background-color: #2a2a2a;
+            display: flex;
+            justify-content: center;
+            padding: 10px 0;
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        nav li {
+            position: relative;
+            margin: 0 15px;
+        }
+
+        nav a {
+            color: #f0f0f0;
+            text-decoration: none;
+            font-size: 1.2rem;
+            font-weight: 700;
+            padding: 10px;
+            display: block;
+            transition: transform 0s ease-in-out;
+        }
+
+        nav a:hover {
+            color: #ffa726;
+            transform: scale(1.075);
+            text-shadow: 0 0 1px #ffa726, 0 0 2px #ffa726;
+        }
+
+        nav li:hover .dropdown,
+        .dropdown:hover {
+            display: block;
+        }
+
+        .dropdown {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: #242424;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+            border-radius: 5px;
+            z-index: 10;
+            min-width: 150px;
+        }
+
+        .dropdown a {
+            display: block;
+            padding: 10px 15px;
+            white-space: nowrap;
+        }
+
+        .dropdown a:hover {
+            color: #ffa726;
+            transform: scale(1.075);
+            text-shadow: 0 0 1px #ffa726, 0 0 2px #ffa726;
+        }
+
+        .dropdown-btn:hover {
+            color: #ffa726; /* Change color on hover */
+        }
+
+        main {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background: #2a2a2a;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            margin-top: 20px;
+            background-color: #242424;
+        }
+
+        footer p {
+            margin: 0;
+            font-size: 0.9rem;
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <!-- Replace 'https://your-logo-url.com/logo.png' with your server's logo file URL -->
+        <img src="https://your-logo-url.com/logo.png" alt="VoidScent SMP Logo">
+        <h1>VoidScent SMP</h1>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#features">Features</a></li>
+            <li><a href="#rules">Rules</a></li>
+            <li>
+                <a class="dropdown-btn">Applications</a>
+                <div class="dropdown">
+                    <a href="#mod-application">Mod</a>
+                    <a href="#builder-application">Builder</a>
+                    <a href="#developer-application">Developer</a>
+                </div>
+            </li>
+        </ul>
+    </nav>
+
+    <main>
+        <div id="home" class="tab-content active">
+            <h2>Welcome to VoidScent SMP!</h2>
+            <p>This is the homepage. Navigate using the menu above to explore more about the server.</p>
+        </div>
+
+        <div id="features" class="tab-content">
+            <h2>Server Features</h2>
+            <p>Insert text here describing unique features of the VoidScent SMP server.</p>
+        </div>
+
+        <div id="rules" class="tab-content">
+            <h2>Rules</h2>
+            <p>Insert text here outlining the rules of the server for players to follow.</p>
+        </div>
+
+        <div id="mod-application" class="tab-content">
+            <h2>Apply for Moderator</h2>
+            <p>Insert text here explaining the process and requirements for applying as a moderator.</p>
+        </div>
+
+        <div id="builder-application" class="tab-content">
+            <h2>Apply for Builder</h2>
+            <p>Insert text here explaining the process and requirements for applying as a builder.</p>
+        </div>
+
+        <div id="developer-application" class="tab-content">
+            <h2>Apply for Developer</h2>
+            <p>Insert text here explaining the process and requirements for applying as a developer.</p>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 VoidScent SMP. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        document.querySelectorAll('nav a').forEach(link => {
+            link.addEventListener('click', event => {
+                event.preventDefault();
+                const targetId = link.getAttribute('href')?.substring(1);
+                if (!targetId) return;
+                document.querySelectorAll('.tab-content').forEach(tab => {
+                    tab.classList.remove('active');
+                });
+                document.getElementById(targetId).classList.add('active');
+            });
+        });
+    </script>
+</body>
+</html>
